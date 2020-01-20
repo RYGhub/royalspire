@@ -1,7 +1,7 @@
 {
   "RoyalSpire:SenseisArt": {
     "NAME": "Sensei's Art",
-    "DESCRIPTION": "Gain 1 Art-ifact.",
-    "UPGRADE_DESCRIPTION": "Gain 2 Art-ifacts."
+    "DESCRIPTION": "Gain !M! Artifact.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Artifacts."
   }
 }

@@ -9,21 +9,19 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 import static RoyalSpire.RoyalSpireMod.makeCardPath;
 
-public class SenseisArt extends AbstractDynamicCard {
+public class SenseisArt extends BetterCard {
 
     public static final String ID = RoyalSpireMod.makeID(SenseisArt.class.getSimpleName());
     public static final String IMG = makeCardPath("SenseisArt.png");
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    public static final int COST = 2;
+    public static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = CardColor.COLORLESS;
+    public static final CardRarity RARITY = CardRarity.UNCOMMON;
+    public static final CardTarget TARGET = CardTarget.SELF;
 
-    private static final int COST = 2;
-
-    private static final int STARTING_ARTIFACT = 1;
-    private static final int UPGRADED_ARTIFACT = 1;
-
+    public static final int STARTING_ARTIFACT = 1;
+    public static final int UPGRADED_ARTIFACT = 1;
 
     public SenseisArt() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -31,13 +29,11 @@ public class SenseisArt extends AbstractDynamicCard {
         this.magicNumber = STARTING_ARTIFACT;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, this.magicNumber), this.magicNumber));
     }
 
-    //Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {
